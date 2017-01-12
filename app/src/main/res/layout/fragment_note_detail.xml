@@ -9,16 +9,16 @@
     <EditText
         android:id="@+id/fragment_note_detail_title"
         android:hint="Enter note title"
-        android:background="#F7DC6F"
+        android:background="@drawable/borde_redondo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp" />
 
     <EditText
         android:id="@+id/fragment_note_detail_description"
         android:hint="Enter note title"
-        android:background="#F5B041"
+        android:background="@drawable/borde_redondo_atras"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top|left"
