@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_weight="3.5"/>
+        android:layout_weight="1.9"/>
 
     <EditText
         android:id="@+id/fragment_note_detail_description"
@@ -34,6 +34,7 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/borde_redondo"
         android:text="Back"
+        android:layout_weight="0.0"
        />
 
     <Button
@@ -42,7 +43,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/borde_redondo"
-        android:text="guardar"/>
+        android:text="guardar"
+        android:layout_weight="0.0"/>
 
 
 </LinearLayout>
