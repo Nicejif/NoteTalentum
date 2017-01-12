@@ -27,8 +27,12 @@ public class NoteDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-                View view= inflater.inflate(R.layout.fragment_note_detail, container, false);
-                return view;
+
+        View view= inflater.inflate(R.layout.fragment_note_detail, container, false);
+        titleText= (EditText) view.findViewById(R.id.fragment_note_detail_title);
+        descriptionText= (EditText) view.findViewById(R.id.fragment_note_detail_description);
+        return view;
+
     }
 
 
@@ -51,12 +55,27 @@ public class NoteDetailFragment extends Fragment {
     }
 
     private void saveAllDataToDisk() {
+        // abro el fichero
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        //se necesita un editor para grabar
+        SharedPreferences.Editor editor = preferences.edit();
+        //leo lo que has escrito en pantalla
+        //tomas el texto con getText().toString()
+        String title = titleText.getText().toString();
+        String description = descriptionText.getText().toString();
+
+        //grabo eso en el fichero
+        editor.putString("NOTE_TITLE",title);
+        editor.putString("NOTE_DESCRIPTION",description);
     }
 
     private void loadAllDataToDisk() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String noteTitle=preferences.getString("NOTE_TITLE", "");
         String noteDescription= preferences.getString("NOTE_DESCRIPTION", "");
+
+        titleText.setText(noteTitle);
+        descriptionText.setText(noteDescription);
     }
 
 }
