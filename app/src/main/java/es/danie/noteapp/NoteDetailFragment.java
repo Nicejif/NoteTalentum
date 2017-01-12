@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import java.util.function.Function;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +56,18 @@ public class NoteDetailFragment extends Fragment {
         loadAllDataToDisk();
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.remove("NOTE_TITLE");
+        editor.remove("NOTE_DESCRIPTION");
+        editor.apply();
+    }
+
     private void saveAllDataToDisk() {
         // abro el fichero
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -67,15 +81,22 @@ public class NoteDetailFragment extends Fragment {
         //grabo eso en el fichero
         editor.putString("NOTE_TITLE",title);
         editor.putString("NOTE_DESCRIPTION",description);
+
+
+
+
+        editor.apply();
     }
 
     private void loadAllDataToDisk() {
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String noteTitle=preferences.getString("NOTE_TITLE", "");
         String noteDescription= preferences.getString("NOTE_DESCRIPTION", "");
 
         titleText.setText(noteTitle);
         descriptionText.setText(noteDescription);
+
     }
 
 }
