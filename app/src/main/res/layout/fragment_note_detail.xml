@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#73C6B6"
+    android:background="@drawable/borde_redondo_fondo"
     tools:context="es.danie.noteapp.NoteDetailFragment"
     android:padding="5dp">
 
