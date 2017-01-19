@@ -16,7 +16,6 @@ public class NoteListFragment extends Fragment {
     private RecyclerView recyclerView;
 
     public NoteListFragment() {
-        // Required empty public constructor
     }
 
 
