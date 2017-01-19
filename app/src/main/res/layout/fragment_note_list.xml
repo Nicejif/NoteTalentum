@@ -5,4 +5,10 @@
     android:background="#4DF0C8"
     tools:context="es.danie.noteapp.NoteListFragment">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
 </FrameLayout>

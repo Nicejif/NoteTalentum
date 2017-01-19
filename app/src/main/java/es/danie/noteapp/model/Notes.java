@@ -7,6 +7,9 @@ import java.util.List;
 public class Notes implements Enumerable<Note> {
 
     private List<Note> noteList = new LinkedList<>();
+
+
+
     @Override
     public int count() {
         return noteList.size();
@@ -33,5 +36,9 @@ public class Notes implements Enumerable<Note> {
     @Override
     public List<Note> getAll() {
         return noteList;
+    }
+
+    public Note get(int i) {
+        return noteList.get(i);
     }
 }
