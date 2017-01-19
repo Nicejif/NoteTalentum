@@ -35,7 +35,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteRowViewHolder> {
 
         Note note = notes.get(position);
 
-        holder.getNote(note);
+        holder.setNote(note);
     }
 
     @Override

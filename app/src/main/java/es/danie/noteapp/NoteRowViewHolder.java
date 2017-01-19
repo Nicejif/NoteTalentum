@@ -22,7 +22,7 @@ public class NoteRowViewHolder extends RecyclerView.ViewHolder {
     }
 
     public Note getNote(Note note) {
-        return this.note;
+        return note;
     }
 
     public void setNote(Note note) {
